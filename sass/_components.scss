@@ -71,9 +71,10 @@
 
 .user-nav{
     align-self: stretch;
-
+    position: relative;
     display: flex;
     align-items: center;
+
 
     & > * {
         padding: 0 2rem;
@@ -93,7 +94,7 @@
         height: 2.25rem;
         width: 2.25rem;
         fill: var(--color-grey-dark-2);
-
+        position: relative;
     }
     &__notification{
         font-size: .8rem;
@@ -115,6 +116,84 @@
         height: 2.75rem;
         border-radius: 50%;
         margin-right: 1rem;
+    }
+    &__user:hover &__menu-box{
+        visibility: visible;
+        transform: translateX(0);
+    }
+    
+    &__menu-box{
+        border-radius: 3px;
+        text-transform: capitalize;
+        position: absolute;
+        background-color: var(--color-grey-dark-2);
+        color: white;
+        top: 8rem;
+        right: 1rem;
+        box-shadow: var(--shadow-light);
+        cursor: pointer;
+        visibility: hidden;
+        transform: translateX(50rem);
+        transition: all .2s .1s ease-in-out;
+
+        display: flex;
+        align-items: center;
+
+
+        @media only screen and (max-width: $bp-medium){
+            z-index: 30;
+        } 
+        @media only screen and (max-width: $bp-smallest){
+            top: 5rem;
+        } 
+        &__nav{
+        
+            list-style: none;
+        }
+        &__item{
+            padding: .5rem 2rem;
+            display:block;
+        }
+        &__item:first-of-type{
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px; 
+        }
+        &__item:last-of-type{
+            border-bottom-left-radius: 3px;
+            border-bottom-right-radius: 3px; 
+        }
+
+
+        &__item:first-of-type:before{
+            content: "";
+            width: 0; 
+            height: 0; 
+
+            border-left: 1rem solid transparent;
+            border-right: 1rem solid transparent;
+            
+            border-bottom: 1rem solid var(--color-grey-dark-2);
+            position: absolute;
+            top: -1rem;
+            right: 5rem;
+        }
+        &__item:first-of-type:hover:before{
+            border-bottom: 1rem solid var(--color-primary-light);
+        }
+    
+
+        &__item:hover{
+            background-color: var(--color-primary-light);
+        }
+        &__link{
+            text-decoration: none;
+            color: white;
+        }
+    }
+
+    &-message:hover .message-box{
+        opacity: 1;
+        visibility: visible;
     }
 }
 
@@ -551,4 +630,87 @@
     &:focus{
         outline: none;
     }
+}
+
+// MESSAGE BOX
+.message-box{
+    opacity: 0;
+    visibility: hidden;
+    position:absolute;
+    background-color: white;
+    top: 6rem;
+    right: 0;
+    width: 50rem;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: var(--shadow-dark);
+    overflow: hidden;
+    z-index: 29;
+    border: 1px solid var(--color-grey-light-1);
+    transition: all .2s;
+
+    display:flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: stretch;
+
+    &__heading{
+        text-align: center;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        font-weight: 900;
+        width: 100%;
+        padding: .5rem 0;
+        color: var(--color-primary);
+        border-bottom: 1px solid  var(--color-grey-light-3);
+        border-top: 1px solid  var(--color-grey-light-3);
+    }
+    &__content{
+        display:flex;
+        background-color:white;
+        padding: 1.5rem 1rem;
+        align-content: center;
+        align-items: center;
+        &:not(:last-child){
+            border-bottom: 1px solid var(--color-grey-light-3);
+        }
+    }
+    &__content:hover{
+        background-color: var(--color-grey-light-1);
+    }
+    // CONTENT BOX
+    &__photo{
+        height: 4rem;
+        width: 4rem;
+        border-radius: 50%;
+    }
+    &__text{
+        flex: 0 0 60%;
+        margin-right: auto;
+        margin-left: 1rem;
+        color: var(--color-grey-dark-3);
+    }
+    &__user-box{
+        text-align: right;
+    }
+    &__user-name{
+        font-size: 1.3rem;
+        color: var(--color-primary);
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+    &__user-date{
+        font-size: 1.1rem;
+        color: var(--color-grey-dark-3);
+    }
+    
+}
+.message-btn{
+    align-self: center;
+    margin-top: 2rem;
+    font-size:1.2rem;
+    text-transform: uppercase;
+}
+.message-btn:hover{
+    color: var(--color-grey-dark-2);
 }
