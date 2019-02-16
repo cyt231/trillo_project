@@ -20,6 +20,8 @@ Compile & Watch (Run server)
 
 Build CSS (compile SASS, prexi and compress)
 
+```trillo_project> npm run build:css```
+
 Media content:
 
 Images: [Unsplash](http://unsplash.com/)
