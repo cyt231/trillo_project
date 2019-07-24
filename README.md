@@ -1,7 +1,7 @@
 
 # [Projeto Trillo](https://cytsuda.github.io/trillo_project/)
 
-Trillo é um website ficticio de corretoria de imóveis. O site é feito todo utilizando apenas HTML/CSS (SASS/SCSS) sem nenhum codigo em javascript.
+Trillo é um website fictício de corretoria de imóveis. O site é feito todo utilizando apenas HTML/CSS (SASS/SCSS) sem nenhum codigo em javascript.
 
 ## Detalhes
 
