@@ -1,12 +1,14 @@
 
-# [Trillo Project](https://cytsuda.github.io/trillo_project/)
+# [Projeto Trillo](https://cytsuda.github.io/trillo_project/)
 
-Trillo Project is a html/css only web site focus on pratice flexbox layout using SASS
+Trillo é um website ficticio de corretoria de imóveis. O site é feito todo utilizando apenas HTML/CSS (SASS/SCSS) sem nenhum codigo em javascript.
 
-## Details
-All CSS files are already compile and all SASS files is in the SASS Folder.
+## Detalhes
 
-**Icons won't show if you're not using live-server functionality.**
+Todos os arquivos SASS estão compilados em arquivos CSS. Os arquivos originais do SASS podem ser encontrados na pasta SASS.
+Nesse projeto também se utiliza conceitos de icon script (svg).
+
+**Os icones somente aparecem quando o site é aberto em Live-server.**
 
 ### NPM SCRIPTS
 
